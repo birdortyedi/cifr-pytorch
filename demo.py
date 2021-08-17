@@ -10,7 +10,7 @@ from modeling.build import build_model
 from utils.data_utils import linear_scaling
 
 
-url = "https://www.dropbox.com/s/y97z812sxa1kvrg/cifr.pth?dl=1"
+url = "https://www.dropbox.com/s/uxvax5sjx5iysyl/cifr.pth?dl=0"
 r = requests.get(url, stream=True)
 if not os.path.exists("cifr.pth"):
     with open("cifr.pth", 'wb') as f:
