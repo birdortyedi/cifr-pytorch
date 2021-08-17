@@ -1,0 +1,17 @@
+requests==2.25.1
+glog==0.3.1
+matplotlib==3.3.4
+torch==1.5.0
+torchvision==0.2.2
+yacs==0.1.7
+numpy==1.18.5
+gradio==1.6.4
+packaging==20.9
+kornia==0.5.5
+wandb==0.9.1
+opencv_contrib_python_nonfree==4.1.1.1
+seaborn==0.11.0
+lpips_pytorch==latest
+colour==0.1.5
+Pillow==8.3.1
+scikit_learn==0.24.2

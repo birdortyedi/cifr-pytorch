@@ -1,0 +1,103 @@
+DATASET:
+  desc: null
+  value:
+    CROP_SIZE: 512
+    MEAN:
+    - 0.5
+    - 0.5
+    - 0.5
+    NAME: IFFI
+    ROOT: ../../Datasets/IFFI-dataset/train
+    SIZE: 256
+    STD:
+    - 0.5
+    - 0.5
+    - 0.5
+    TEST_ROOT: ../../Datasets/IFFI-dataset/test
+MODEL:
+  desc: null
+  value:
+    CKPT: ./cifr.pth
+    D:
+      NAME: 1-ChOutputDiscriminator
+      NUM_CHANNELS: 32
+      NUM_CRITICS: 3
+      SOLVER:
+        BETAS:
+        - 0.5
+        - 0.999
+        DECAY_RATE: 0.01
+        LR: 0.0001
+        SCHEDULER: []
+    IFR:
+      DESTYLER_CHANNELS: 32
+      NAME: ContrastiveInstaFilterRemovalNetwork
+      NUM_CHANNELS: 32
+      SOLVER:
+        BETAS:
+        - 0.5
+        - 0.999
+        DECAY_RATE: 0
+        LR: 0.0002
+        SCHEDULER: []
+    IS_TRAIN: true
+    NAME: ifrnet-pc
+    NUM_CLASS: 17
+    PATCH:
+      BETAS:
+      - 0.5
+      - 0.999
+      LR: 0.0001
+      NUM_CHANNELS: 256
+      NUM_LAYERS: 6
+      NUM_PATCHES: 256
+      SHUFFLE_Y: true
+      T: 0.07
+      USE_MLP: true
+OPTIM:
+  desc: null
+  value:
+    ADVERSARIAL: 0.001
+    AUX: 0.5
+    CONTRASTIVE: 0.1
+    GP: 10
+    MASK: 1
+    RECON: 1.4
+    SEMANTIC: 0.001
+    TEXTURE: 0.002
+SYSTEM:
+  desc: null
+  value:
+    NUM_GPU: 2
+    NUM_WORKERS: 4
+TEST:
+  desc: null
+  value:
+    ABLATION: false
+    BATCH_SIZE: 32
+    IMG_ID: 52
+    OUTPUT_DIR: ./outputs
+    WEIGHTS: ''
+TRAIN:
+  desc: null
+  value:
+    BATCH_SIZE: 8
+    EVAL_INTERVAL: 1000
+    IS_TRAIN: false
+    LOG_INTERVAL: 100
+    NUM_TOTAL_STEP: 200000
+    RESUME: true
+    SAVE_DIR: ./weights
+    SAVE_INTERVAL: 1000
+    SHUFFLE: true
+    START_STEP: 0
+    TUNE: false
+    VISUALIZE_INTERVAL: 100
+WANDB:
+  desc: null
+  value:
+    ENTITY: vvgl-ozu
+    LOG_DIR: ./logs/ifrnet-pc_IFFI_200000step_8bs_0.0002lr_2gpu_3run
+    NUM_ROW: 0
+    PROJECT_NAME: contrastive-style-learning-for-ifr
+    RUN: 3
