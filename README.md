@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ![][model]
 
 ## Dataset
-![**IFFI dataset**][dataset]
+[**IFFI dataset**][dataset]
 contains 600 images and with their 16 different filtered versions for each. In particular, mostly-used
 16 filters as follows: *1977*, *Amaro*, *Brannan*, *Clarendon*, *Gingham*,
 *He-Fe*, *Hudson*, *Lo-Fi*, *Mayfair*, *Nashville*, *Perpetua*, *Sutro*,
@@ -55,7 +55,7 @@ To evaluate CIFR on IFFI dataset, run:
 python main.py --base_cfg config.yaml -t -w ifrnet.pth --dataset IFFI --dataset_dir /path/to/dataset
 ```
 
-## Citation
+[comment]: <> (## Citation)
 
 [comment]: <> (```)
 
